@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- the theme applied to the application or activity -->
+    <style name="ISPCUTheme"
+        parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ISPCUActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="ISPCUActionBar"
+        parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/ispcuBlue</item>
+        <item name="android:textColor">@color/nav_text</item>
+        <item name="android:displayOptions">showCustom</item>
+    </style>
+</resources>
