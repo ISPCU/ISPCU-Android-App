@@ -2,9 +2,11 @@
 <resources>
 
     <string name="app_name">ISPCU</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">News</string>
+    <string name="title_section2">About</string>
+    <string name="title_section3">Organization</string>
+    <string name="title_section4">Volunteer</string>
+    <string name="title_section5">Members</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
