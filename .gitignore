@@ -3,4 +3,4 @@
 /local.properties
 /.idea/
 /build/
-/ISPConsumersUnion.iml
+*.iml
