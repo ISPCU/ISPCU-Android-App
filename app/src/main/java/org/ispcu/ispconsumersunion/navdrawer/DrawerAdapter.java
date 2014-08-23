@@ -15,6 +15,8 @@ import org.ispcu.ispconsumersunion.R;
 
 public class DrawerAdapter extends ArrayAdapter<DrawerItem> {
 
+    private static final float height = 100.0f;
+
     Context context;
     DrawerItem[] drawerItemList;
     int layoutResID;
@@ -61,10 +63,11 @@ public class DrawerAdapter extends ArrayAdapter<DrawerItem> {
             drawerHolder.text.setTextSize(17);
             drawerHolder.text.setBackgroundColor(view.getResources().getColor(R.color.ispcuBlue));
             drawerHolder.text.setGravity(Gravity.CENTER);
+            final float scale = view.getResources().getDisplayMetrics().density;
             drawerHolder.text.setLayoutParams(
                     new LinearLayout.LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
-                            200
+                            (int) (height * scale * 0.5f)
                     )
             );
             drawerHolder.text.setTextColor(view.getResources().getColor(android.R.color.white));

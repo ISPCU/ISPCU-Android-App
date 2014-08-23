@@ -55,6 +55,7 @@ public class MainActivity extends SherlockFragmentActivity
                 .commit();
     }
 
+    // Won't be used until fragments for each activity have been made
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -66,10 +67,16 @@ public class MainActivity extends SherlockFragmentActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section5);
+                break;
         }
     }
 
-    public void restoreActionBar() {
+    private void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         View mView = getLayoutInflater().inflate(R.layout.actionbar_view, null);
         TextView tv = (TextView) mView.findViewById(R.id.title);
@@ -108,6 +115,7 @@ public class MainActivity extends SherlockFragmentActivity
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
+    // Will be replaced later, for now just leaving the generated code
     /**
      * A placeholder fragment containing a simple view.
      */

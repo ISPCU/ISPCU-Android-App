@@ -5,6 +5,8 @@
         parent="Theme.Sherlock.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ISPCUActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/background_holo_light</item>
     </style>
 
     <!-- ActionBar styles -->
