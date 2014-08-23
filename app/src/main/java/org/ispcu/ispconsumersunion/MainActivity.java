@@ -1,11 +1,9 @@
 package org.ispcu.ispconsumersunion;
 
-import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
-import java.util.Hashtable;
+import org.ispcu.ispconsumersunion.navdrawer.NavigationDrawerFragment;
 
 public class MainActivity extends SherlockFragmentActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -138,8 +136,7 @@ public class MainActivity extends SherlockFragmentActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_main, container, false);
         }
 
         /*@Override
@@ -148,26 +145,5 @@ public class MainActivity extends SherlockFragmentActivity
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }*/
-    }
-
-}
-
-class FontCache {
-
-    private static Hashtable<String, Typeface> fontCache = new Hashtable<String, Typeface>();
-
-    public static Typeface get(String name, Context context) {
-        Typeface tf = fontCache.get(name);
-        if (tf == null) {
-            try {
-                tf = Typeface.createFromAsset(context.getAssets(), name);
-            } catch (Exception e) {
-                Log.getStackTraceString(e);
-                Log.w("FontCache", "Font not found: " + name);
-                return null;
-            }
-            fontCache.put(name, tf);
-        }
-        return tf;
     }
 }

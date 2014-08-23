@@ -4,6 +4,7 @@
     <style name="ISPCUTheme"
         parent="Theme.Sherlock.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ISPCUActionBar</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <!-- ActionBar styles -->

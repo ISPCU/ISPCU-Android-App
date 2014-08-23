@@ -1,4 +1,4 @@
-package org.ispcu.ispconsumersunion;
+package org.ispcu.ispconsumersunion.navdrawer;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,6 +22,9 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+
+import org.ispcu.ispconsumersunion.FontCache;
+import org.ispcu.ispconsumersunion.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -99,17 +101,18 @@ public class NavigationDrawerFragment extends SherlockFragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+        mDrawerListView.setAdapter(new DrawerAdapter(
                 getActionBar().getThemedContext(),
                 R.layout.nav_drawer_item,
-                R.id.text,
-                new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
-                        getString(R.string.title_section4),
-                        getString(R.string.title_section5)
-                }));
+                new DrawerItem[]{
+                    new DrawerItem("ISP CONSUMERS UNION"),
+                    new DrawerItem(getString(R.string.title_section1)),
+                    new DrawerItem(getString(R.string.title_section2)),
+                    new DrawerItem(getString(R.string.title_section3)),
+                    new DrawerItem(getString(R.string.title_section4)),
+                    new DrawerItem(getString(R.string.title_section5))
+                },
+                (SherlockFragmentActivity)getActivity()));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
@@ -193,16 +196,19 @@ public class NavigationDrawerFragment extends SherlockFragment {
     }
 
     private void selectItem(int position) {
-        mCurrentSelectedPosition = position;
-        if (mDrawerListView != null) {
-            mDrawerListView.setItemChecked(position, true);
+        if (position != 0) {
+            mCurrentSelectedPosition = position;
+            if (mDrawerListView != null) {
+                mDrawerListView.setItemChecked(position, true);
+            }
+            if (mDrawerLayout != null) {
+                mDrawerLayout.closeDrawer(mFragmentContainerView);
+            }
+            if (mCallbacks != null) {
+                mCallbacks.onNavigationDrawerItemSelected(position);
+            }
         }
-        if (mDrawerLayout != null) {
-            mDrawerLayout.closeDrawer(mFragmentContainerView);
-        }
-        if (mCallbacks != null) {
-            mCallbacks.onNavigationDrawerItemSelected(position);
-        }
+
     }
 
     @Override

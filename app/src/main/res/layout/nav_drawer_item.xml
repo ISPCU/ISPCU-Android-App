@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent" >
-
-    <ImageView
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:contentDescription="item" />
-
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center_vertical"
-        android:paddingLeft="6dip"
+        android:paddingLeft="15dip"
         android:paddingRight="6dip"
-        android:paddingStart="6dip"
+        android:paddingStart="15dip"
         android:paddingEnd="6dip"
         android:textColor="@color/nav_text"
-        android:minHeight="45sp" />
-
+        android:minHeight="50sp" />
 </LinearLayout>
